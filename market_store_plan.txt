@@ -1,0 +1,40 @@
+market_store
+
+lo que se hacia antiguamente: el cliente llegaba y un trabajador atendia al cliente apuntando los productos que pedia en una lista->cliente obtiene lista con el total de los productos pedidos (y una firma opcional que era el nombre del cliente)->el cliente llevaba la lista a otra trabajadora del local para que lo revize y le ponga un sello  ya que obtuvo el monto total del pedido->el cliente pasa a recepcionar su pedido.
+
+AHORA CON EL SISTEMA
+
+lo que el cliente hara: el cliente llega->pide producto(s)->obtiene voleta con el total que debe pagar->la recepcionista encargada reviza la boleta y la actualiza a pagado cuando el cliente pague el monto
+
+el usuario del sistema: agregara productos con (codigo de barras,nombre,categoria, costo_adquerido, precio_menor, precio_mayor, limite_por_menor, margen_ganancia, stock_actual,stock_alerta, fecha_vencimiento, fecha_produccion) | crear usuarios: nombre, email, contraseña, tipo_usuario, createdAt, updatedAt | ver un dashboard con: ventas de hoy,ventas el mes pasado, de este mes, ganancias de hoy/mes actual | y ya acceder y operar en lo que hace el vendedor tambien | el vendedor puede iniciar una venta: el id de la venta | al crear una venta se crea una tabla que referencie los productos que se han comprado (una venta puede tener uno o mas productos vendidos osea, referenciando la venta por cada producto) por lo que en esa tabla debera ir (id, id_venta, id_producto, sub_total, precio_unitario, sub_total) | podra registrar clientes (nombre, email?,dni?,ruc?,createdAt,updatedAt) | sin borrado crudo solo logico.
+
+borrador de la bd:
+
+enum tipo_usuario: 'admin' | 'vendedor'.
+
+users: id, name, email, password, tipo_usuario, createdAt, updatedAt.
+
+enum categoria: 'abarrotes/despensa' | 'perecederos/frescos' | 'lacteos y huevos' | 'limpieza del hogar' | 'cuidado personal' | 'bebidas'.
+
+producto: id, name, bars_code, lote?, categoria, price_aquired, minor_price, major_price, limit_minor_adquirition, revenue_margin, current_stock, alert_stock, expiration_date, production_date, active, createdAt, updatedAt.
+
+clientes: id, name, email?, dni?, ruc?, active, createdAt, updatedAt.
+
+enum tipo_comprobante: 'boleta' | 'factura'.
+
+enum estado_compra: 'cancelado' | 'en proceso' | 'rechazado'.
+
+ventas: id, id_usuario, id_cliente, voucherType, sell_status, total, createdAt, updatedAt.
+
+                              # 1 venta  n productos  el total de ese producto por la cantidad
+
+detalles_venta: id, id_venta, id_producto, sub_total, quantity, unity_price, createdAt.
+
+----------------------------------------------------------------
+
+el diseño de visily se gestionara asi:
+la ventana de login se mantendría igual | el main visualización seria de (resúmenes como ganancias totales, ventas totales, alertas de stock, alertas de productos expirados) | en dashboard ya iría mas desmenuzado (ganancia filtrado por (dia, mes, año) actual al igual que ventas, luego un grafico con resumen de cada reporte mencionado calculado) y ultimas ventas (ventas realizadas ultimamente) | en productos solo quitaría que se muestre imagen ya que aun no la voy a implementar, no se mostrara muchos detalles pero habrá un botón para que se muestre los detalles de ese producto en un modal | modulo usuarios se mantiene igual solo que el formulario será flotante | en modulo cliente se mantendrá igual | modulo de ventas o pos se mantendrá igual | recepción no existira (ya que solo se enviara el voucher al cliente por whatssap) mostrara un voucher solo cuando en pos se pulse botón de mostrar voucher pero en pos se va a llevar a cabo las acciones y el voucher se mostrara en un modal.* con decir de que se mantendrá asi igual o similar me refiero a que en estructura esta bien y que me esforzare en añadir casi las mismas features que se encuentren en mi mvp que son CRUD de cada modulo menos de los que son ventas y/o detalles y en cuanto a diseño, las ventanas que voy a modificar son (main que no tendrá un modulo en el sidebar si no que solo presentara un resumen ya explicado en la gestión de diseño de visily | el dashboard modulo tendrá todo mas desmenuzado ya explicado | en productos ya esta explicado | en usuarios como lo explicado pero obvio que no habrá auditoria de logs | clientes se mantiene como esta | modulo de pos similar solo que quiero un diseño de modal flotante parael card de carrito responsivo | eso quedaria) ya que el voucher aun no se enviaría al cliente, eso es en la segunda version.
+
+--------------------------------------------------------------------
+
+dependencias que necesito: BACKEND (express, cors, dotenv, prisma, tsx, typescript, jwt, ) | FRONTEND (recharts,tremor,tanstack query, react-ts, react-router-dom, tailwindcss and vite, tsx, axios) | RAIZ (concurrently)
