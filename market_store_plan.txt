@@ -38,3 +38,5 @@ la ventana de login se mantendría igual | el main visualización seria de (res�
 --------------------------------------------------------------------
 
 dependencias que necesito: BACKEND (express, cors, dotenv, prisma, tsx, typescript, jwt, ) | FRONTEND (recharts,tremor,tanstack query, react-ts, react-router-dom, tailwindcss and vite, tsx, axios) | RAIZ (concurrently)
+
+el .env del backend aun no esta creado
