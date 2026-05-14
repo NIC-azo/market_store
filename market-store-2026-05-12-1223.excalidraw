@@ -489,7 +489,7 @@
       "x": 669.8284955705917,
       "y": -106.70465305873302,
       "width": 451.2000732421875,
-      "height": 110,
+      "height": 135,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -505,8 +505,8 @@
         "type": 3
       },
       "seed": 1709630645,
-      "version": 66,
-      "versionNonce": 625103594,
+      "version": 67,
+      "versionNonce": 616076656,
       "isDeleted": false,
       "boundElements": [
         {
@@ -538,7 +538,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1778707609491,
+      "updated": 1778766293328,
       "link": null,
       "locked": false
     },
@@ -548,7 +548,7 @@
       "x": 692.8686567034042,
       "y": -101.70465305873302,
       "width": 405.1197509765625,
-      "height": 100,
+      "height": 125,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -562,20 +562,20 @@
       "index": "aE",
       "roundness": null,
       "seed": 1917849755,
-      "version": 137,
-      "versionNonce": 696618651,
+      "version": 188,
+      "versionNonce": 296489840,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1778614834164,
+      "updated": 1778766293518,
       "link": null,
       "locked": false,
-      "text": "index.route.ts->usamos el route:\n[auth.route,user.route] con metod use de\nRouter(); integrando url: [auth:  /auth,\n/users]",
+      "text": "index.route.ts->usamos el route:\n[auth.route,user.route] con metod use de\nRouter(); integrando url: [auth:  /auth,\n/users, /clients, /products, /sells,\n/dashboard]",
       "fontSize": 20,
       "fontFamily": 5,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": "lpAhJJI9dzddBPu5Kh1HV",
-      "originalText": "index.route.ts->usamos el route: [auth.route,user.route] con metod use de Router(); integrando url: [auth:  /auth, /users]",
+      "originalText": "index.route.ts->usamos el route: [auth.route,user.route] con metod use de Router(); integrando url: [auth:  /auth, /users, /clients, /products, /sells, /dashboard]",
       "autoResize": true,
       "lineHeight": 1.25
     },
@@ -661,7 +661,7 @@
       "x": 48.128504725865156,
       "y": 168.89533778599355,
       "width": 847.2000274658203,
-      "height": 159.05237001302243,
+      "height": 132.5642743694533,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -675,11 +675,11 @@
       "index": "aG",
       "roundness": null,
       "seed": 1882683675,
-      "version": 54,
-      "versionNonce": 1741810011,
+      "version": 55,
+      "versionNonce": 1306814320,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1778614833510,
+      "updated": 1778766293341,
       "link": null,
       "locked": false,
       "points": [
@@ -689,15 +689,15 @@
         ],
         [
           0,
-          -79.79999542236328
+          -67.29999542236328
         ],
         [
           847.2000274658203,
-          -79.79999542236328
+          -67.29999542236328
         ],
         [
           847.2000274658203,
-          -159.05237001302243
+          -132.5642743694533
         ]
       ],
       "startBinding": {
@@ -1238,7 +1238,7 @@
       "x": 641.7285489763534,
       "y": 159.29536220005605,
       "width": 253.59998321533192,
-      "height": 150.00001525878906,
+      "height": 123.63637889515272,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -1252,11 +1252,11 @@
       "index": "aS",
       "roundness": null,
       "seed": 1718392853,
-      "version": 56,
-      "versionNonce": 1390400437,
+      "version": 57,
+      "versionNonce": 1170602352,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1778614857915,
+      "updated": 1778766293343,
       "link": null,
       "locked": false,
       "points": [
@@ -1266,15 +1266,15 @@
         ],
         [
           0,
-          -75.00000762939453
+          -62.50000762939453
         ],
         [
           253.59998321533192,
-          -75.00000762939453
+          -62.50000762939453
         ],
         [
           253.59998321533192,
-          -150.00001525878906
+          -123.63637889515272
         ]
       ],
       "startBinding": {
@@ -1750,7 +1750,7 @@
       "x": 1157.72852608817,
       "y": 172.09544154575917,
       "width": 262.3999938964846,
-      "height": 162.8000946044922,
+      "height": 136.43645824085584,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -1764,11 +1764,11 @@
       "index": "ac",
       "roundness": null,
       "seed": 458910005,
-      "version": 29,
-      "versionNonce": 1386698677,
+      "version": 30,
+      "versionNonce": 799361904,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1778615403041,
+      "updated": 1778766293344,
       "link": null,
       "locked": false,
       "points": [
@@ -1778,15 +1778,15 @@
         ],
         [
           0,
-          -81.4000473022461
+          -68.9000473022461
         ],
         [
           -262.3999938964846,
-          -81.4000473022461
+          -68.9000473022461
         ],
         [
           -262.3999938964846,
-          -162.8000946044922
+          -136.43645824085584
         ]
       ],
       "startBinding": {
@@ -2262,7 +2262,7 @@
       "x": 1706.528574916295,
       "y": 181.69535609654042,
       "width": 811.2000427246096,
-      "height": 172.40000915527344,
+      "height": 146.0363727916371,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -2276,11 +2276,11 @@
       "index": "am",
       "roundness": null,
       "seed": 417642229,
-      "version": 46,
-      "versionNonce": 1686521045,
+      "version": 47,
+      "versionNonce": 97148272,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1778615780842,
+      "updated": 1778766293345,
       "link": null,
       "locked": false,
       "points": [
@@ -2290,15 +2290,15 @@
         ],
         [
           0,
-          -86.20000457763672
+          -73.70000457763672
         ],
         [
           -811.2000427246096,
-          -86.20000457763672
+          -73.70000457763672
         ],
         [
           -811.2000427246096,
-          -172.40000915527344
+          -146.0363727916371
         ]
       ],
       "startBinding": {
@@ -2926,7 +2926,7 @@
       "x": 2237.604695202055,
       "y": 171.62711128356008,
       "width": 1342.2761630103698,
-      "height": 162.33176434229313,
+      "height": 135.96812797865675,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -2940,11 +2940,11 @@
       "index": "aw",
       "roundness": null,
       "seed": 1350264918,
-      "version": 101,
-      "versionNonce": 115522838,
+      "version": 102,
+      "versionNonce": 964505456,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1778636085610,
+      "updated": 1778766293346,
       "link": null,
       "locked": false,
       "points": [
@@ -2954,15 +2954,15 @@
         ],
         [
           0,
-          -81.16588217114655
+          -68.66588217114655
         ],
         [
           -1342.2761630103698,
-          -81.16588217114655
+          -68.66588217114655
         ],
         [
           -1342.2761630103698,
-          -162.33176434229313
+          -135.96812797865675
         ]
       ],
       "startBinding": {
@@ -3251,7 +3251,7 @@
       "version": 102,
       "versionNonce": 1692568426,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1778707402010,
       "link": null,
       "locked": false,
@@ -3327,7 +3327,7 @@
       "version": 8,
       "versionNonce": 1493372086,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1778707602839,
       "link": null,
       "locked": false,
@@ -3403,7 +3403,7 @@
       "version": 31,
       "versionNonce": 2130226678,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1778707605806,
       "link": null,
       "locked": false,
@@ -3462,7 +3462,7 @@
       "x": 3303.3189809163405,
       "y": 250.91282556927445,
       "width": 2407.990448724655,
-      "height": 241.61747862800746,
+      "height": 215.25384226437112,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -3476,11 +3476,11 @@
       "index": "b06",
       "roundness": null,
       "seed": 1151445430,
-      "version": 156,
-      "versionNonce": 1375931498,
+      "version": 157,
+      "versionNonce": 1392886128,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1778707613922,
+      "boundElements": [],
+      "updated": 1778766293349,
       "link": null,
       "locked": false,
       "points": [
@@ -3490,15 +3490,15 @@
         ],
         [
           0,
-          -120.80873931400373
+          -108.30873931400373
         ],
         [
           -2407.990448724655,
-          -120.80873931400373
+          -108.30873931400373
         ],
         [
           -2407.990448724655,
-          -241.61747862800746
+          -215.25384226437112
         ]
       ],
       "startBinding": {
