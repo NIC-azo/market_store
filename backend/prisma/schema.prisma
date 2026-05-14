@@ -1,0 +1,114 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Users {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  typeUser  UserType @default(VENDEDOR)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sells sells[]
+}
+
+enum UserType {
+  ADMIN
+  VENDEDOR
+}
+
+model Clients {
+  id        String   @id @default(uuid())
+  name      String
+  email     String?
+  dni       String?  @unique
+  ruc       String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sells sells[]
+}
+
+enum category {
+  ABARROTES
+  PERECEDEROS
+  LACTEOS
+  LIMPIEZA
+  CUIDADO_PERSONAL
+  BEBIDAS
+}
+
+model Products {
+  id                      String    @id @default(uuid())
+  name                    String
+  bars_code               String?   @unique
+  lote                    String?
+  category                category  @default(ABARROTES)
+  price_adquired          Decimal   @db.Decimal()
+  minor_price             Decimal   @db.Decimal()
+  wholesale_price         Decimal   @db.Decimal()
+  limit_minor_adquirition Int       @default(5)
+  revenue_margin          Decimal   @db.Decimal()
+  current_stock           Int
+  alert_stock             Int       @default(5)
+  expiration_date         DateTime?
+  production_date         DateTime?
+  active                  Boolean   @default(true)
+  createdAt               DateTime  @default(now())
+  updatedAt               DateTime  @updatedAt
+
+  sellDetails SellDetails[]
+}
+
+enum voucherType {
+  BOLETA
+  FACTURA
+}
+
+enum sellStatus {
+  CANCELADO
+  EN_PROCESO
+  ANULADO
+}
+
+model sells {
+  id          String        @id @default(uuid())
+  user        Users         @relation(fields: [id_user], references: [id])
+  id_user     String
+  client      Clients?      @relation(fields: [id_client], references: [id])
+  id_client   String?
+  voucherType voucherType   @default(BOLETA)
+  // cancelado quiere decir que ya el cliente pago el total
+  sellStatus  sellStatus    @default(CANCELADO)
+  total       Decimal       @db.Decimal()
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  sellDetails SellDetails[]
+}
+
+// relacion 1-n
+model SellDetails {
+  id             String   @id @default(uuid())
+  sells          sells    @relation(fields: [id_sell], references: [id])
+  id_sell        String
+  product        Products @relation(fields: [id_product], references: [id])
+  id_product     String
+  // cantidad que se estaba pidiendo
+  total          Int
+  // sub total por cada cantidad del producto que se esta pidiendo
+  sub_total      Decimal  @db.Decimal()
+  // precio del producto original
+  original_price Decimal  @db.Decimal()
+  createdAt      DateTime @default(now())
+}
