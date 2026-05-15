@@ -3,7 +3,7 @@
 script para crear directorios ("lib", "model", "controller", "middleware", "route", "service" | ForEach-Object { New-Item "./src/$_" -Type "Directory" } | Get-ChildItem -Recurse | Where-Object { $_.FullName -notmatch "node_modules" } )
 
 ---
-
+[1]
 connection a postgresql en local
 con prismaClient
 
@@ -23,7 +23,12 @@ prisma con tipo PrismaClient; pool: Pool
 **Septimo**: por último exportamos la configuracion de prismaInstance.
 
 ---
-
+[2]
 seed.ts:
 
 **Primero**:
+
+--------------
+
+[3]
+
