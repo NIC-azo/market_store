@@ -12,8 +12,11 @@ class AuthModel {
                 id: true,
                 name: true,
                 email: true,
+                typeUser: true,
                 password: true,
             }
         });
     };
 }
+
+export default new AuthModel();

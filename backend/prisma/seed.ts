@@ -15,7 +15,7 @@ const main = async () => {
     const admin: user = {
         name: 'nicolas azo',
         email: 'nicnazo@test.com',
-        password: await bcrypt.hash('ICKKCK1243FFF', Number(process.env.HASH_SALTS)),
+        password: await bcrypt.hash('ICKKCK1243FFF', Number(process.env.HASH_SALTS!)),
         typeUser: 'ADMIN',
     };
 

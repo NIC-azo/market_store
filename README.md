@@ -93,4 +93,25 @@ express.d.ts:
 
 **Primero**: importamos el type JwtPayload.
 
-**Segundo**: declaramos globalmente del .
+**Segundo**: declaramos globalmente que el nameSpace Express ensu interfaz Request siempre va a tener un user tipo JwtPayload.
+
+-----------
+
+[8]
+
+auth.model.ts:
+
+**Primero**: importamos la instancia singleton y creamos clase AuthModel.
+**Segundo**: declaramos una funcion asynchrony con parametro que reciba string para:
+    --**retornar un usuario**
+    --**usando el email del usuario**
+    --**seleccionando solo datos con los que operaremos**
+**Tercero**: metodo con espera a su respuesta y exportamos una instancia de la clase.
+
+---------------
+
+[9]
+
+auth.controller.ts:
+
+**Primero**: .
