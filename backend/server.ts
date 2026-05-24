@@ -21,5 +21,5 @@ app.use('/api', router);
 const PORT = process.env.NODE_ENV === "dev" ? process.env.PORT_LOCAL! : process.env.PORT!;
 
 app.listen(PORT, () => {
-    console.log(`🚀 Servidor listo en puerto: ${process.env.PORT}`);
+    console.log(`🚀 Servidor listo en puerto: ${PORT}`);
 });

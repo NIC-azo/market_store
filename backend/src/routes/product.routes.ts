@@ -13,13 +13,12 @@ class ProductRoutes {
     private configRouter(): void {
         this.router.get('/health', () => console.log(`rutas de productos funcionando`));
         this.router.use(authMiddleware);
-        this.router.use(roleMiddleware("ADMIN"));
-        this.router.get('/', ProductsController.getAll);
-        this.router.get('/:id_product', ProductsController.getOne);
-        this.router.post('/product', ProductsController.create);
-        this.router.put('/product/:id_product', ProductsController.update);
-        this.router.delete('/:id_product', ProductsController.delete);
-        this.router.get('/allerts', ProductsController.getAllerts);
+        this.router.get('/', roleMiddleware("ADMIN"), ProductsController.getAll);
+        this.router.get('/:id_product', roleMiddleware("ADMIN"), ProductsController.getOne);
+        this.router.post('/product', roleMiddleware("ADMIN"), ProductsController.create);
+        this.router.put('/product/:id_product', roleMiddleware("ADMIN"), ProductsController.update);
+        this.router.delete('/:id_product', roleMiddleware("ADMIN"), ProductsController.delete);
+        this.router.get('/allerts', roleMiddleware("ADMIN"), ProductsController.getAllerts);
     }
 }
 

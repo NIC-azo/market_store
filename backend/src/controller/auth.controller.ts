@@ -10,18 +10,18 @@ class AuthController {
     static login = errorHandler(async(req: Request, res: Response) => {
         const {email, password} = req.body;
         if (!email || String(email).length <= 0) {
-            return res.status(403).json({error: true, message: "valor(es) no validos intentelo denuevo"});
+            return res.status(400).json({error: true, message: "valor(es) no validos intentelo denuevo"});
         }
         if (!password || String(password).length <= 6) {
-            return res.status(403).json({error: true, message: "valor(es) no validos intentelo denuevo"});
+            return res.status(400).json({error: true, message: "valor(es) no validos intentelo denuevo"});
         }
         const userFound = await authModel.getUserByEmail(String(email));
         if (!userFound) {
-            return res.status(403).json({error: true, message: "valor(es) no validos, intentelo en 1 minuto"});
+            return res.status(400).json({error: true, message: "valor(es) no validos, intentelo en 1 minuto"});
         }
         const comparePassword = await bcrypt.compare(String(password), userFound.password);
         if (!comparePassword) {
-            return res.status(403).json({error: true, message: "valor(es) no validos, intentelo en 1 minuto"});
+            return res.status(400).json({error: true, message: "valor(es) no validos, intentelo en 1 minuto"});
         }
         const token = jwt.sign(
             {userId: userFound.id, rol: userFound.typeUser},

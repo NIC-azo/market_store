@@ -14,11 +14,10 @@ class ClientRoutes {
     private configRoutes() : void {
         this.router.get('/health', () => console.log(`user routes funcionando`));
         this.router.use(authMiddleware);
-        this.router.use(roleMiddleware("ADMIN", "VENDEDOR"));
-        this.router.get('/', ClientsController.getAll);
-        this.router.get('/:id_client', ClientsController.getOne);
-        this.router.post('/client', ClientsController.create);
-        this.router.put('/client/:id_client', ClientsController.update);
+        this.router.get('/', roleMiddleware("ADMIN", "VENDEDOR"), ClientsController.getAll);
+        this.router.get('/:id_client', roleMiddleware("ADMIN", "VENDEDOR"), ClientsController.getOne);
+        this.router.post('/client', roleMiddleware("ADMIN", "VENDEDOR"), ClientsController.create);
+        this.router.put('/client/:id_client', roleMiddleware("ADMIN", "VENDEDOR"), ClientsController.update);
     }
 }
 
