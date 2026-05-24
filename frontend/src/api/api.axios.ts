@@ -1,7 +1,6 @@
 // README.md | [30]
-import axios, { isAxiosError } from "axios";
-import type {AxiosResponse, AxiosInstance, InternalAxiosRequestConfig, AxiosError} from 'axios'
-import type { BackendErrorResponse } from '@/types/bd.response.schemas'
+import axios from "axios";
+import type {AxiosResponse, AxiosInstance, InternalAxiosRequestConfig} from 'axios'
 
 const API_URL = import.meta.env.VITE_NODE_ENV! === "dev" ?
     import.meta.env.VITE_LOCAL_API_URL! : import.meta.env.VITE_API_URL!;

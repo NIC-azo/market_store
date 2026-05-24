@@ -9,12 +9,22 @@ export interface User {
     name: string;
 }
 
+export interface DataResponse<T> {
+    data: T;
+}
 
-
-export interface BackendErrorResponse {
-    error: boolean;
+export interface BackendResponse {
+    error?: boolean;
     message: string;
-    status?: number;
+}
+
+export interface AuthResponse extends BackendResponse {
+    token: string;
+    user: {
+        userId: string;
+        rol: Rol;
+        name: string;
+    }
 }
 
 export interface Client {
